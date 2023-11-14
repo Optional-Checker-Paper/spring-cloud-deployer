@@ -86,7 +86,7 @@ class AbstractCloudFoundryDeployer {
 		return (int) ByteSizeUtils.parseToMebibytes(withUnit);
 	}
 
-	@SuppressWarnings("optional:method.invocation") // checker-error : type-refinement in streams not yet supported
+	@SuppressWarnings("optional:method.invocation") // checker-issue : type-refinement in streams not yet supported
 	int memory(AppScaleRequest request) {
 		if (request.getProperties().isPresent() && request.getProperties().get() != null) {
 			return (int) ByteSizeUtils.parseToMebibytes(request.getProperties().get().getOrDefault(AppDeployer.MEMORY_PROPERTY_KEY,
@@ -95,7 +95,7 @@ class AbstractCloudFoundryDeployer {
 		return (int) ByteSizeUtils.parseToMebibytes(this.deploymentProperties.getMemory());
 	}
 
-	@SuppressWarnings("optional:method.invocation") // checker-error : type-refinement in streams not yet supported
+	@SuppressWarnings("optional:method.invocation") // checker-issue : type-refinement in streams not yet supported
 	int diskQuota(AppScaleRequest request) {
 		if (request.getProperties().isPresent() && request.getProperties().get() != null) {
 			return (int) ByteSizeUtils.parseToMebibytes(request.getProperties().get().getOrDefault(AppDeployer.DISK_PROPERTY_KEY,
@@ -129,7 +129,7 @@ class AbstractCloudFoundryDeployer {
 						.stream().anyMatch(s -> ServiceParser.getServiceParameters(s).isPresent());
 	}
 
-	@SuppressWarnings("optional:method.invocation") // checker-error : type-refinement in streams not yet supported
+	@SuppressWarnings("optional:method.invocation") // checker-issue : type-refinement in streams not yet supported
 	Stream<BindServiceInstanceRequest> bindParameterizedServiceInstanceRequests(AppDeploymentRequest request,
 		String deploymentId) {
 		return ServiceParser.splitServiceProperties(request.getDeploymentProperties().get
