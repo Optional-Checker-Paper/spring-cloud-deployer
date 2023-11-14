@@ -129,7 +129,7 @@ class AbstractCloudFoundryDeployer {
 						.stream().anyMatch(s -> ServiceParser.getServiceParameters(s).isPresent());
 	}
 
-	@SuppressWarnings("method.invocation") // checker-error : type-refinement in streams not yet supported
+	@SuppressWarnings("optional:method.invocation") // checker-error : type-refinement in streams not yet supported
 	Stream<BindServiceInstanceRequest> bindParameterizedServiceInstanceRequests(AppDeploymentRequest request,
 		String deploymentId) {
 		return ServiceParser.splitServiceProperties(request.getDeploymentProperties().get
@@ -172,7 +172,7 @@ class AbstractCloudFoundryDeployer {
 		}
 	}
 
-	@SuppressWarnings("introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
+	@SuppressWarnings("optional:introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
 	String javaOpts(AppDeploymentRequest request) {
 		return Optional
 				.ofNullable(
