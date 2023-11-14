@@ -36,6 +36,7 @@ public interface ActuatorOperations {
 	 * @param requestHeaders optional request headers.
 	 * @return the contents as the given type.
 	 */
+	@SuppressWarnings("optional.parameter") // optional.parameter : use of optional as a parameter
 	<T> T getFromActuator(String deploymentId, String guid, String endpoint, Class<T> responseType,
 			Optional<HttpHeaders> requestHeaders);
 
@@ -59,6 +60,7 @@ public interface ActuatorOperations {
 	 * @param requestHeaders optional request headers.
 	 * @return the contents as a {@code String}.
 	 */
+	@SuppressWarnings("optional.parameter") // optional.parameter : use of optional as a parameter
 	default String getFromActuator(String deploymentId, String guid, String endpoint,
 			Optional<HttpHeaders> requestHeaders){
 		return getFromActuator(deploymentId, guid, endpoint, String.class, requestHeaders);
@@ -85,6 +87,7 @@ public interface ActuatorOperations {
 	 * @param requestHeaders optional request headers.
 	 * @return the result (response body).
 	 */
+	@SuppressWarnings("optional.parameter") // optional.parameter : use of optional as a parameter
 	<T,R> R postToActuator(String deploymentId, String guid, String endpoint, T body, Class<R> responseType,
 			Optional<HttpHeaders> requestHeaders);
 

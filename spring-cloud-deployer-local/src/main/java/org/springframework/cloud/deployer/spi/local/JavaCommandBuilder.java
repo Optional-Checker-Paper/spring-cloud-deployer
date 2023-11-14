@@ -75,6 +75,7 @@ public class JavaCommandBuilder implements CommandBuilder {
 	}
 
 	@Override
+	@SuppressWarnings("optional.parameter") // optional-parameter : use of optional as a parameter
 	public ProcessBuilder buildExecutionCommand(
 		AppDeploymentRequest request, Map<String, String> appInstanceEnv,
 		String deployerId, Optional<Integer> appInstanceNumber, LocalDeployerProperties localDeployerProperties,

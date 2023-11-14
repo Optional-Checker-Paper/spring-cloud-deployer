@@ -41,6 +41,7 @@ public interface CommandBuilder {
 	 * @param debugAddress application remote debug address.
 	 * @return the build command as a string array.
 	 */
+	@SuppressWarnings("optional.parameter") // optional-parameter : use of optional as a parameter
 	ProcessBuilder buildExecutionCommand(AppDeploymentRequest request,
 			Map<String, String> appInstanceEnv, String deployerId,
 			Optional<Integer> appInstanceNumber,

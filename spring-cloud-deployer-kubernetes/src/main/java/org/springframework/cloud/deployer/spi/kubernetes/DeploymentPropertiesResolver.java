@@ -583,6 +583,7 @@ class DeploymentPropertiesResolver {
 		return affinity;
 	}
 
+	@SuppressWarnings("introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
 	Container getInitContainer(Map<String, String> kubernetesDeployerProperties) {
 		Container container = null;
 		KubernetesDeployerProperties deployerProperties = bindProperties(kubernetesDeployerProperties,

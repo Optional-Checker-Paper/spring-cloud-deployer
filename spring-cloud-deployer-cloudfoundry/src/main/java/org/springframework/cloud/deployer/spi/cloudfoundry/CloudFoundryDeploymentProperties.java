@@ -210,6 +210,7 @@ public class CloudFoundryDeploymentProperties {
 
 	private String javaOpts;
 
+	@SuppressWarnings("optional.field") // optional-field : use of optional as a field
 	private Optional<Map<String, String>> env = Optional.empty();
 	
 	/**

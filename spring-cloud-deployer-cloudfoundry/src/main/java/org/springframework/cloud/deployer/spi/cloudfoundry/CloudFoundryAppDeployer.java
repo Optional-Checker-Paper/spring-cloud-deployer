@@ -298,6 +298,7 @@ public class CloudFoundryAppDeployer extends AbstractCloudFoundryDeployer implem
 		return this.applicationNameGenerator.generateAppName(appName);
 	}
 
+	@SuppressWarnings("introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
 	private String domain(AppDeploymentRequest request) {
 		return Optional
 				.ofNullable(request.getDeploymentProperties().get(CloudFoundryDeploymentProperties.DOMAIN_PROPERTY))
@@ -323,6 +324,7 @@ public class CloudFoundryAppDeployer extends AbstractCloudFoundryDeployer implem
 				.map(this::toApplicationHealthCheck).orElse(this.deploymentProperties.getHealthCheck());
 	}
 
+	@SuppressWarnings("introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
 	private String healthCheckEndpoint(AppDeploymentRequest request) {
 		return Optional
 				.ofNullable(request.getDeploymentProperties()
@@ -337,6 +339,8 @@ public class CloudFoundryAppDeployer extends AbstractCloudFoundryDeployer implem
 		return Integer.parseInt(timeoutString);
 	}
 
+
+	@SuppressWarnings("introduce.eliminate") // introduce-eliminate : unnecessary optional instantiation
 	private String host(AppDeploymentRequest request) {
 		return Optional
 				.ofNullable(request.getDeploymentProperties().get(CloudFoundryDeploymentProperties.HOST_PROPERTY))
