@@ -33,7 +33,7 @@ public class AppScaleRequest {
     private final int count;
     private final String deploymentId;
 
-    @SuppressWarnings("optional.field") // optional.field : use of optional as a field
+    @SuppressWarnings("optional:optional.field") // optional.field : use of optional as a field
     private final Optional<Map<String,String>> properties;
 
     /**

@@ -47,7 +47,7 @@ public abstract class AbstractActuatorTemplate implements ActuatorOperations {
 
 	private final AppAdmin appAdmin;
 
-	@SuppressWarnings("optional.field") // optional.field : use of optional as a field
+	@SuppressWarnings("optional:optional.field") // optional.field : use of optional as a field
 	private final Optional<String> defaultAuthenticationHeaderValue;
 
 	protected AbstractActuatorTemplate(RestTemplate restTemplate, AppDeployer appDeployer, AppAdmin appAdmin) {
@@ -62,7 +62,7 @@ public abstract class AbstractActuatorTemplate implements ActuatorOperations {
 
 
 	@Override
-	@SuppressWarnings("optional.parameter") // optional-parameter : use of optional as a parameter
+	@SuppressWarnings("optional:optional.parameter") // optional-parameter : use of optional as a parameter
 	public <T> T getFromActuator(String deploymentId, String guid, String endpoint, Class<T> responseType,
 			Optional<HttpHeaders> optionalRequestHeaders) {
 
@@ -83,7 +83,7 @@ public abstract class AbstractActuatorTemplate implements ActuatorOperations {
 	}
 
 	@Override
-	@SuppressWarnings("optional.parameter") // optional-parameter : use of optional as a parameter
+	@SuppressWarnings("optional:optional.parameter") // optional-parameter : use of optional as a parameter
 	public <T, R> R postToActuator(String deploymentId, String guid, String endpoint, T body,
 			Class<R> responseType, Optional<HttpHeaders> optionalRequestHeaders) {
 		AppInstanceStatus appInstanceStatus = getDeployedInstance(deploymentId, guid)
@@ -125,7 +125,7 @@ public abstract class AbstractActuatorTemplate implements ActuatorOperations {
 		return Optional.empty();
 	}
 
-	@SuppressWarnings("optional.parameter") // optional-parameter : use of optional as a parameter
+	@SuppressWarnings("optional:optional.parameter") // optional-parameter : use of optional as a parameter
 	private final HttpHeaders requestHeaders(Optional<HttpHeaders> optionalAppInstanceHeaders,
 			Optional<HttpHeaders> optionalRequestHeaders) {
 		HttpHeaders requestHeaders = optionalAppInstanceHeaders
