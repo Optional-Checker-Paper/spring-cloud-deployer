@@ -156,6 +156,7 @@ public abstract class AbstractLocalDeployerSupport {
 	 * @param appInstanceEnv the instance environment variables
 	 * @return the process builder
 	 */
+  @SuppressWarnings("optional:optional.parameter") // optional-parameter : use of optional as a parameter
 	protected ProcessBuilder buildProcessBuilder(AppDeploymentRequest request, Map<String, String> appInstanceEnv,
 			Optional<Integer> appInstanceNumber, String deploymentId) {
 		Assert.notNull(request, "AppDeploymentRequest must be set");
